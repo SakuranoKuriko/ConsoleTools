@@ -2,11 +2,11 @@
 
 error_reporting(0);
 
-if (!isset($_REQUEST['target']) || !isset($_REQUEST['msg']) || $_REQUEST['target']=='' || $_REQUEST['msg']=='')
-    die('ERROR: Illegal arguments!');
+if (!isset($_REQUEST['msg']) || $_REQUEST['msg']=='')
+    die('ERROR: need message!');
 
 $eof = "\n";
-$target = 'udp://' . $_REQUEST['target'];
+$target = 'udp://127.0.0.1:18888';
 $orimsg = $_REQUEST['msg'];
 
 $msg = explode($eof, $orimsg);
