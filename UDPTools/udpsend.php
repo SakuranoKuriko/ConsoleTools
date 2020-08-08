@@ -7,9 +7,7 @@ if (!isset($_REQUEST['target']) || !isset($_REQUEST['msg']) || $_REQUEST['target
 
 $eof = "\n";
 $target = 'udp://' . $_REQUEST['target'];
-$orimsg = $_REQUEST['msg'];
-
-$msg = explode($eof, $orimsg);
+$msg = explode($eof, $_REQUEST['msg']);
 
 $socket = stream_socket_client($target, $errno, $errstr);
 if (!$socket) die("ERROR: {$errno} - {$errstr}");
