@@ -77,7 +77,7 @@ int main(int argc, char *argv[]){
     //目标地址
     addr.sin_addr.s_addr = inet_addr(ip);
     free(ip);
-    
+
     //使用主,副版本号初始化WSA（Windows Sockets Asynchronous）
     //使用WSADATA接收初始化完成后的相关环境数据
     WSADATA wsaData;
@@ -102,7 +102,7 @@ int main(int argc, char *argv[]){
         printf("Send failed!");
     else printf("Send success");
 
-    printf("Cleaning up...");
+    //printf("Cleaning up...");
     closesocket(sockfd);
     //与WSAStartup配套的WSACleanup
     WSACleanup();
